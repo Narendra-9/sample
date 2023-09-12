@@ -1,0 +1,33 @@
+
+
+
+{% extends 'base.html' %}
+{%block title%}
+Register Page
+{%endblock%}
+{%block content%}
+<body  >
+    <div class="container" style="width: 500px; margin-top: 50px;">
+        <form method="POST" class="form-register" style="color:rgb(249, 248, 253);">
+            {{form.hidden_tag()}}
+            <!-- <img class="mb-4"src="https://res.cloudinary.com/jimshapedcoding/image/upload/v1597332609/android-icon-192x192_ove2a7.png" alt=""> -->
+            <h1 class="h3 mb-3 font-weight-normal text-center">
+                <b>Add Items to the Market</b>
+            </h1>
+            <br>
+            {{form.name.label()}}
+            {{form.name(class="form-control",placeholder="Enter Item name")}}
+            {{form.price.label()}}
+            {{form.price(class="form-control",placeholder="Enter Price of the Item")}}
+            {{form.barcode.label()}}
+            {{form.barcode(class="form-control",placeholder="Enter Barcode")}}
+            {{form.description.label()}}
+            {{form.description(class="form-control",placeholder="Enter description")}}
+            <br>
+            <!--  -->
+            {{form.submit(class="btn btn-lg btn-block btn-primary")}}
+        </form>
+
+    </div>
+</body>
+{%endblock%}
