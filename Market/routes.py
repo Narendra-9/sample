@@ -93,3 +93,10 @@ def additems_page():
         flash("Sorry, You are not allowed to access that page!",category="danger")
         return redirect(url_for('market'))
     return render_template('additem.html',form=form)
+
+
+@app.route('/clear_database', methods=['GET', 'POST'])
+def clear_database():
+    db.drop_all()
+    db.create_all()
+    return "Database cleared"
